@@ -1,0 +1,29 @@
+Instructions Editor Features:
+
+Be able to comment a section of html code.
+Be able to uncomment a section of html code.
+Be able to add paragraphs
+
+
+Saving .. to where?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Code editor moves with window during scroll to stay pinned at the top.

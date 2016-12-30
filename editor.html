@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Seminar: Learning to Create Your Own Flappy Bird Game with Scratch</title>
+    <link rel="stylesheet" type="text/css" href="_styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="_styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="_styles/editor.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,200,500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="_lib/codemirror.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="_jquerypin/jquery.pin.min.js"></script>
+    <script src="_lib/codemirror.js"></script>
+    <script src="_lib/xml.js"></script>
+    
+    <script src="_lib/show-hint.js"></script>
+    <script src="_lib/xml-hint.js"></script>
+    <script src="_lib/html-hint.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="_scratchblocks/scratchblocks2_allow_undefined_blocks.css"> -->
+		<link rel="stylesheet" type="text/css" href="_scratchblocks/scratchblocks2.css">
+		<script src="_scratchblocks/scratchblocks2_2.js"></script>
+		<script type="text/javascript" src="_js/cssrefresh.js"></script>
+  </head>
+  <body>
+    <div class='main border3'>
+      <div class='side-controller-container mypinned'>
+        <div class='side-controller'>Show<br>Hide</div>
+      </div>
+      <div class='code-editor mypinned'>
+        <div class='control-panel'>
+          <div class='btn' id='bold_btn'>Bold</div>
+          <div class='btn' id='italic_btn'>Italic</div>
+          <div class='btn' id='underline_btn'>Underline</div>
+          <div class='btn' id='br_btn'>Br</div>
+          <div class='btn' id='inlinecode_btn'>Inline Code</div>
+          <div class='btn' id='lrq_btn'>“”</div>
+          <div class='btn' id='link_btn'>Link</div>
+          <br><br>
+          <div class='btn' id='newpart_btn'>New Part</div>
+          <div class='btn' id='newmod_btn'>New Module</div>
+          <div class='btn' id='newstep_btn'>New Step</div>
+          <div class='btn' id='blockcode_btn'>Block Code</div>
+          <div class='btn' id='image_btn'>Image</div>
+          <div class='clearfix'></div>
+        </div>
+        <div class='code'>
+          <!-- Create a simple CodeMirror instance -->
+          <textarea id='editor' value='<html></html>'></textarea>
+          <script src="_js/editor.js"></script>
+        </div>
+      </div>
+      <div class='instr'>
+				<div id='output'>
+				</div>
+			</div>
+    </div>
+    
+  </body>
+</html>

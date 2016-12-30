@@ -1,0 +1,780 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Seminar: Learning to Create Your Own Flappy Bird Game with Scratch</title>
+    <link rel="stylesheet" type="text/css" href="_styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="_styles/styles.css">
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Raleway:400,700,600,200,500'>
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic'>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="_scratchblocks/scratchblocks2_allow_undefined_blocks.css">
+    <script src="_scratchblocks/scratchblocks2.js"></script>
+    <script>
+      $( document ).ready(function() {
+        scratchblocks2.parse();
+        scratchblocks2.parse("code.b", {inline: true});
+      });
+    </script>
+  </head>
+  <body>
+  	<div class='header border3'>
+      <p class='h1label'>Seminar:</p>
+      <h1>Learning to Create Your Own Flappy Bird Game with Scratch</h1>
+      <div class='seminardetails'>
+      	<p>Thursday, June 12, 2014</p>
+      	<p>3:30pm to 5:30pm</p>
+      	<p>Cary Memorial Library, Large Meeting Room</p>
+      </div>
+      <div class='authordetails'>
+        <p class='label'>Presented By</p> 
+        <p class='author'>Ted Zhu</p>
+        <p>Computer Science and Engineering Major</p>
+        <p>The Ohio State University</p>
+      </div>
+    </div>
+    <div class='main border3'>
+      <div class='activityintro'>
+        <h1>Activity Instructions</h1>
+        <p>This learning activity is broken down into multiple modules, or ‘mini-activities’ that will build off each other and will eventually allow you to build a complete Flappy Bird Game.</p>
+      </div>
+      <div class='activitygoal'>
+      	<h1>Activity Goal:</h1>
+      	<iframe allowtransparency="true" width="485" height="402" src="http://scratch.mit.edu/projects/embed/22756569/?autostart=false" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class='instr'>
+        <h1>Part 0: Setting Up</h1>
+        <div class='module'>
+					<div class='module-title'>
+						<div class='label'>Module 0<span class='colon'>:</span></div>
+						<div class='title'>Create a Scratch Account</div>
+					</div>
+					<ol>
+						<img class='floated' src='_images/0.1.png'/>
+						<li><strong>Go</strong> to: <a href='http://scratch.mit.edu' target='_blank'> http://scratch.mit.edu</a> .</li>
+						<li><strong>Click</strong> on “Join Scratch”.</li>
+						<li><strong>Follow</strong> the instructions to create a new Scratch Account.</li>
+					</ol>
+				</div>
+        <div class='module'>
+        	<div class='module-title'>
+          	<div class='label'>Module 1<span class='colon'>:</span></div>
+          	<div class='title'>Understand the Interface</div>
+          </div>
+          <p>The rest of the document will make references to different parts of the interface. Come back here when you don’t know where in the interface the instructions are referring to. </p>
+          <img class='full' src='_images/1.1.png' />
+        </div>
+        <h1>Part 1: Introduction to Motion</h1>
+        <div class='module'>
+        	<div class='module-title'>
+          	<div class='label'>Module 2<span class='colon'>:</span></div>
+          	<div class='title'>Changing the Position of a Sprite</div>
+          </div>
+          <ol>
+            <li>
+              <strong>Drag</strong> the following instruction into the empty <em>scripts area</em>.
+              <pre class='blocks'>change x by (10)</pre>
+            </li>
+            <li>
+              <strong>Click</strong> on this instruction and see what happens. <br>
+              Now, click on this instruction several times to see what happens.
+            </li>
+            <li>
+              <strong>Change</strong> the value inside the instruction from 10 to −10, and see what happens when you run the instruction.
+              <br><br>
+              The <code class='b'>change x by (...)</code> and <code class='b'>change y by (...)</code> instructions allow you to change the x and y coordinates of the sprite by a specified amount. The change gets updated on the stage immediately after the instruction is run.
+            </li>
+          </ol>
+        </div>
+        <div class='module'>
+        	<div class='module-title'>
+          	<div class='label'>Module 3<span class='colon'>:</span></div>
+          	<div class='title'>Make a Sprite Move Across the Screen</div>
+          </div>
+          <ol>
+            <li>
+              <strong>Drag</strong> the following instructions into the <em>scripts area</em>. 
+              You will have to go to the “Control” section of the block palette to access the repeat block.
+              <pre class='blocks'>
+                repeat (10)
+                  change x by (10)
+                end
+              </pre>
+            </li>
+            <li>
+              <strong>Click</strong> on this set of instructions to see what happens when it gets run.
+              <br>
+              <br>
+              The repeat block can wrap around <span class='underline'>any</span> set of instructions and repeatedly runs them the specified number of times. In this case, the instruction <code class='b'>change x by (10)</code> is repeated 10 times, giving the appearance of the sprite moving across the screen to the right.
+              <br>
+              <br>
+              You can try changing the values inside the 
+              	<code class='b'>
+              		repeat (...)
+    
+       						end
+       					</code> and <code class='b'>change x by (...)</code> instructions to see how they get affected when run.
+            </li>
+          </ol>
+        </div>
+				<h1>Part 2: Beginning the Flappy Bird Project</h1>
+				<div class='module'>
+					<div class='module-title'>
+          	<div class='label'>Module 4<span class='colon'>:</span></div>
+          	<div class='title'>Bring “Faby” the Flappy Bird into the World</div>
+          </div>
+					<div>
+						<img class='floated' src='_images/4.1.png'>
+						<p>
+							<em>Yes, “Faby” is the official name of the bird of the Flappy Bird game, according to the original game developer, Dong Nguyen. (<a target='_blank' href='https://twitter.com/dongatory/status/430598410937192448'>Twitter</a>)</em>
+						</p>
+						<ol>
+							<li>
+								<strong>Delete</strong> <em>Sprite1</em> from the project by right-clicking on Sprite1 in the <span class='underline'>sprites pane</span> and choosing “delete.” This will remove the Scratch Cat sprite from your project.
+							</li>
+							<li>
+								<strong>	Create</strong> a new, blank sprite by clicking on the paint brush icon (<img class='inline' src='_images/4.2.png'>) in the <span class='underline'>sprites pane</span>.
+								<br>
+								<br>
+								You have now created a new blank sprite, which will become the Faby bird sprite. 
+							</li>
+							<li>
+								The <span class='underline'>costume pane</span> should automatically open.
+								<ol class='level2'>
+									<li>
+										<strong>Download</strong> the image files from this <a href='_files/faby_costumes.zip'>zip file</a>, and extract all the files to a folder on your computer.
+									</li>
+									<li>
+										<strong>Upload</strong> the 6 costumes for the new sprite by clicking on the file upload icon (<img class='inline' src='_images/4.3.png'>) in the <span class='underline'>costume pane</span>.
+										<br>
+										<br>
+										Sometimes uploading multiple files at the same time can be buggy. Please make sure <span class='underline'>all</span> 6 of the following costumes got successfully uploaded:
+										<ul class='compressed'>
+											<li>BlueDown</li>
+											<li>BlueUp</li>
+											<li>RedDown</li>
+											<li>RedUp</li>
+											<li>YellowDown</li>
+											<li>YellowUp</li>
+										</ul>
+										The costumes do not need to appear in this exact order in the costumes pane.
+									</li>
+									<li><strong>Select</strong> a costume you want to use for Faby.</li>
+								</ol>
+							</li>
+							<li>
+								<strong>Rename</strong> the sprite by clicking on the blue <img class='inline' src='_images/4.4.png'> icon for the sprite in the <span class='underline'>sprites pane</span>. Then type in “Faby” for the sprite name.
+								<br>
+								<br>
+								You have now created a Faby sprite that is ready to go!
+							</li>
+				
+						</ol>
+					</div>
+				</div>
+				<div class='module'>
+					<div class='module-title'>
+						<div class='label'>Module 5<span class='colon'>:</span></div>
+						<div class='title'>Add Gravity to Faby the Bird</div>
+					</div>
+					<p>
+						<em>We learned in <strong>Part 1: Introduction to Motion</strong>, that we can use the following commands to make a sprite change its position on the screen: <code class='b'>change x by (...)</code> and <code class='b'>change y by (...)</code>. Because gravity influences objects to move in a downwards direction, we will use the latter of the two commands, <code class='b'>change y by (...)</code>, to control Faby vertically.</em>
+					</p>
+					<p>
+						<em>In order to simulate gravity, we must store the y-velocity in the following program variable: <code class='b'>(y velocity)</code>.</em>
+					</p>
+					<p>
+						<em><strong>Program variables</strong> are values in programs that may change over time. Some program variables are built into Scratch like <code class='b'>(x position)</code> and <code class='b'>(y position)</code>, and others we will create ourselves like <code class='b'>(y velocity)</code>.</em>
+					</p>
+					<p>
+						<em>Without program variables, we would only be able to make a sprite move downwards with constant velocty. To accurately simulate gravity, we need the downward velocity to change over time as well. See the following diagram:</em>
+					</p>
+					<img class='full' src='_images/faby-gravity.png'>
+					<ol>
+						<li style='width:750px;'>
+							<strong>Create</strong> a new program variable called “y velocity.”
+							<ol class='level2'>
+								<img class='floated' src='_images/5.1.png' style='padding-left: 50px;padding-top:30px;'>
+			
+								<li><strong>Go</strong> to the “Data” section of <span class='underline'>block palette</span>.</li>
+								<li><strong>Choose</strong> “Make a variable.”</li>
+								<li><strong>Type</strong> in “<em>y velocity</em>” for the variable name.</li>
+								<li><strong>Choose</strong> “For this sprite only” under the variable name.</li>
+								<li  style='width:700px;'>
+									<strong>Click</strong> OK.
+									<br><br>
+									You now have access to the variable and two commands for manipulating its value: <div class='code-lineup'><code class='b'>(y velocity)</code><code class='b'>set [y velocity v] to [...]</code><code class='b'>change [y velocity v] by (...)</code></div>
+								</li>
+							</ol>
+				
+						</li>
+						<li>
+							<pre class='blocks floated'>
+								forever
+									change y by (y velocity)
+									change [y velocity v] by (-1.2)
+									if <(y position) < [-179]> then
+										set [y velocity v] to [0]
+										set y to (-180)
+									end
+								end
+
+							</pre>
+							<strong>Drag</strong> the following instruction set into the <span class='underline'>scripts area</span> and click on it to run the code block. Immediately you will see Faby fall to the ground. 
+			
+							<br><br>Try dragging and dropping Faby in different areas of the <span class='underline'>stage</span> to see gravity act on him.
+			
+							<br><br><em>Note: You will need to search around the <span class='underline'>block palette</span> to make all of the instructions in this code block.</em>
+			
+			
+						</li>
+						<div class='explain'>
+							<div class='explain-title'>
+								<div class='label'>Explanatory Note:</div>
+								<div class='title'>Using an IF Statement to Detect When Faby Hits the Ground</div>
+								<div class='clearfix'></div>
+							</div>
+							<img class='' src='_images/faby-ground.png' style='float:left;margin:10px;'>
+							<div style='width:500px; float:left;'>
+								<p>Y = −180 is the vertical lower bound for the stage. We use an IF statement to test if the y-position of the sprite has gone below −179. <p>If the sprite has gone below −179, Faby has “hit” the ground, and therefore his y velocity should be set to zero, and to maintain consistency everytime he hits the ground, we set his y position to −180.</p>
+							</div>
+							<br><br><br><br><br>
+							<div class='clearfix'></div>
+						</div>
+		
+					</ol>
+				</div>
+				<div class='module'>
+					<div class='module-title'>
+						<div class='label'>Module 6<span class='colon'>:</span></div>
+						<div class='title'>Make Faby Jump</div>
+					</div>
+					<p>
+						<em>An <strong>event</strong> is something that occurs that a program can detect and respond to during its runtime. Event related commands can be found in the events section of the <span class='underline'>block palette</span>, and from there we will make use of three main event instructions:</em>
+					</p>
+					<div class='code-lineup'>
+						<code class='b'>when green flag clicked</code>
+						<code class='b'>when [space v] key pressed</code>
+						<code class='b'>when I receive [message1 v]</code>
+					</div>
+					<p>
+						<em>Let's see how we'll use one event instruction to allow us to make Faby respond to the user and jump.</em>
+					</p>
+	
+					<ol>
+						<li>
+							<strong>Drag</strong> the following instruction set into the <span class='underline'>scripts area</span>.
+							<pre class='blocks'>
+								when [space v] key pressed
+								set [y velocity v] to [12]
+							</pre>
+						</li>
+						<li>
+							<strong>Try</strong> pressing the space bar to see if Faby responds and jumps. 
+							<br><br>
+							<em>Note: If you do not see Faby jump, make sure that the code block from the previous module has been clicked and is running.</em>
+						</li>
+					</ol>
+				</div>
+
+				<h1>Part 3: More Game Logic</h1>
+				<div class='module'>
+					<div class='module-title'>
+						<div class='label'>Module 7<span class='colon'>:</span></div>
+						<div class='title'>Changing Faby's Costume</div>
+					</div>
+					<p>If you remember <strong>Module 4: Bring “Faby” the Flappy Bird into the World</strong>, we uploaded 6 costumes that Faby could display throughout the game:</p>
+					<img class='full' style='' src='_images/faby-costume-lineup-100ppi.png'>
+					<br>
+					<p>We will use the <code class='b'>switch costume to [... v]</code> command to switch back and forth between costumes.</p>
+					<ol>
+						<li><strong>Drag</strong> out a few of the following switch costume commands into the scripts area for your own testing demonstration purposes:
+			
+							<pre class='blocks'>
+								switch costume to [BlueDown v]
+				
+								switch costume to [BlueUp v]
+				
+								switch costume to [YellowDown v]
+				
+								switch costume to [YellowUp v]
+				
+								switch costume to [RedDown v]
+				
+								switch costume to [RedUp v]
+							</pre>
+		
+						</li>
+						<li><strong>Try</strong> clicking them to see how they change Faby's appearance.</li>
+					</ol>
+				</div>
+				<div class='module'>
+					<div class='module-title'>
+						<div class='label'>Module 8<span class='colon'>:</span></div>
+						<div class='title'>Changing Faby's Costume Progammatically</div>
+					</div>
+					<p>We want to be able to change Faby's costume in a more dynamic manner, this will give us more flexibility to achieve effects like Faby's flapping.</p>
+					<p>First, we will use two variables to store the two states of Faby: his <code class='b'>(color)</code> and <code class='b'>(wing direction)</code>.</p>
+					<ol>
+						<li><strong>Make</strong> a new variable called "color": <code class='b'>(color)</code> <br><em>Be sure to remember to choose <strong>"For this sprite only".</strong> <br><br>If you don't rememer how to make a variable, we introduced variables in <strong>Module 5:
+				Add Gravity to Faby the Bird</strong></em></li>
+						<li><strong>Make</strong> another variable called "wing direction":<code class='b'>(wing direction)</code><br><em>(Again, be sure to remember to choose <strong>"For this sprite only".</strong>)</em></li>
+						<li>
+							<strong>Set</strong> initial values to these variables:
+							<ol class='level2'>
+								<li><strong>Drag</strong> out the following instruction group.</li>
+								<pre class='blocks'>
+									set [color v] to [Yellow]
+									set [wing direction v] to [Up]
+								</pre>
+								<li>
+									<strong>Click</strong> on the instruction group to set initial values to these two variables.
+									<br><br>
+									<em>You should see on the stage a display of the current values of your variables. The <strong>color</strong> and <strong>wing direction</strong> variables should be initialized as shown below:</em>
+									<img class='full' src='_images/8.1_3.png'>
+									<br>
+									<em>Note: You can hide these displays by unchecking the checkbox next to the variables listed in the Data section of the block palette. 
+									<br><br>Eventually, as we add more variables to the project you will want to hide all of the value displays from the stage as to not clutter everything.</em>
+								</li>
+							</ol>
+						</li>
+						<li>
+							<strong>Make</strong> a new block function:
+							<ol class='level2' style='width:650px'>
+								<img class='floated' src='_images/make-a-new-block-70pc.png' style='padding-left:20px'>
+								<li><strong>Go</strong> to the <strong>More Blocks</strong> section of the block palette, and </li>
+								<li><strong>Choose</strong>: "Make a Block"</li>
+								<li><strong>Name</strong> the block <em>Change Color Variable</em>.</li>
+								<li><strong>Click</strong> OK.</li>
+							</ol>
+						</li>
+						<li class='clearfix'>
+							<strong>Drag</strong> out the following instruction group into the new block definition: 
+							<pre class='blocks'>
+								define Change Color Variable
+								if <(color) = [Yellow]> then
+										set [color v] to [Red]
+								else
+										if <(color) = [Red]> then
+												set [color v] to [Blue]
+										else
+												set [color v] to [Yellow]
+										end
+								end
+							</pre>
+							<br>
+							Click on the instruction group and observe the variable value of "color" change from "Yellow" to "Red" to "Blue" and then back to "Yellow":
+							<img class='full' src='_images/yrby.png' style='padding-left:10px'>
+							<br><em>Think about how the logic in the code works out to make the color variable value change in this sequence.</em>
+						</li>
+						<li>
+							<strong>Make</strong> another new block function called <em>Change Wing Direction Variable</em> with the following sub-instructions: 
+							<pre class='blocks'>
+								define Change Wing Direction Variable
+								if <(wing direction) = [Up]> then
+										set [wing direction v] to [Down]
+								else
+										set [wing direction v] to [Up]
+								end
+							</pre>
+							<br>
+							Click on the instruction group and observe the variable value of "wing direction" change from "Up" to "Down" and then to "Up" again:
+							<img class='full' src='_images/udu.png' style='padding-left:10px'>
+							<br><em>Think about how the logic in the code works to make this happen.</em>
+						</li>
+						<li>
+							<strong>Drag</strong> out the following instruction set to make use of the two user-defined instructions, <code class='b'>Change Color Variable</code> and <code class='b'>Change Wing Direction Variable</code> that you just created:
+
+							<pre class='blocks'>
+								forever
+									Change Color Variable
+									repeat (6)
+										Change Wing Direction Variable
+										switch costume to (join (color) (wing direction))
+										wait (0.3) secs
+									end
+								end
+							</pre>
+							<br>
+							Click on this instruction set to see Faby flap his wings and change his color.
+			
+							<div class='explain' style='width: 700px'>
+								<div class='explain-title'>
+									<div class='label'>Explanatory Note:</div>
+									<div class='title'>Using the JOIN Statement to Switch Costumes</div>          
+								</div>
+								<table class='floated'>
+									<tr>
+										<th><code class='b'>(color)</code></th>
+										<th><code class='b'>(wing direction)</code></th>
+										<th><code class='b'>(join (color) (wing direction))</code></th>
+									</tr>
+									<tr>
+										<td>Yellow</td>
+										<td>Up</td>
+										<td>YellowUp</td>
+									</tr>
+									<tr>
+										<td>Yellow</td>
+										<td>Down</td>
+										<td>YellowDown</td>
+									</tr>
+									<tr>
+										<td>Red</td>
+										<td>Up</td>
+										<td>RedUp</td>
+									</tr>
+									<tr>
+										<td>Red</td>
+										<td>Down</td>
+										<td>RedDown</td>
+									</tr>
+									<tr>
+										<td>Blue</td>
+										<td>Up</td>
+										<td>BlueUp</td>
+									</tr>
+									<tr>
+										<td>Blue</td>
+										<td>Down</td>
+										<td>BlueDown</td>
+									</tr>
+								</table>
+								<p style='line-height: 30px; margin:0;'>The Join statement attaches two text values together to form a new text value. In this case, if the value of <code class='b'>(color)</code> is “Yellow”, and the value of <code class='b'>(wing direction)</code> is “Up”, then the code expression <code class='b'>(join (color) (wing direction))</code> evaluates to the text "YellowUp", which is the exact name of one of the costumes for the sprite.</p>
+								<div class='clearfix'></div>
+								<br>
+							</div>
+		
+						</li>
+					</ol>
+				</div>
+
+				<h1>Part 4: Adding Other Game Elements</h1>
+				<div class='module'>
+					<div class='module-title'>
+						<div class='label'>Module 9<span class='colon'>:</span></div>
+						<div class='title'>Improve Game Organization with a Controller Sprite</div>
+					</div>
+					<p><em>As we begin to add broader game flow logic, we don't want this logic to be soley handled by the Faby sprite. We want this logic to be handed by a dedicated, invisible sprite that we'll call “Controller”.</em></p>
+					<ol>
+						<li><strong>Create</strong> a new sprite with the <em>Paint new sprite <img class='inline' src='_images/paint-brush-icon.png'> button.</em></li>
+						<li><strong>Rename</strong> the sprite to “Controller”</li>
+						<li><strong>Draw</strong> a single black dot in the center of the costume editor. </li>
+						<li><strong>Create</strong> the variable <code class='b'>(Game Mode)</code> as a <span class='underline'>Global Variable</span> by choosing the <em><strong>For all sprites</strong></em> option in the New Variable dialog. This makes the variable available for all sprites in the game to read and change its value.</li>
+						<li>
+							<strong>Add</strong> the following instruction sets into the scripts area for the Controller sprite:
+							<div class='clearfix'></div>
+							<pre class='blocks' style='float:left;'>
+								when green flag clicked
+								broadcast [Initialize Variables v]
+								broadcast [Reset Stage v]
+
+
+								when I receive [Initialize Variables v]
+								set [ghost v] effect to (100)
+								set y to (0)
+								set x to (0)
+								hide
+
+
+								when I receive [Reset Stage v]
+								set [Game Mode v] to [Pre-Game]
+								say [Press Space to Begin]
+								show
+
+							</pre>
+			
+							<pre class='blocks' style='float:left;'>
+								when [space v] key pressed
+								if <(Game Mode) = [Pre-Game]> then
+										set [Game Mode v] to [In-Game]
+										broadcast [Begin Game v]
+								end
+
+
+								when I receive [Begin Game v]
+								hide
+
+
+								when I receive [Faby Died v]
+								broadcast [Reset Stage v]
+							</pre>
+						</li>
+		
+					</ol>
+					<br class='clearfix'><br><br><br>
+					<div class='explain'>
+						<div class='explain-title'>
+							<div class='label'>Explanatory Note:</div>
+							<div class='title'>Using Messages to Communicate with Other Sprites</div>          
+						</div>
+						<img class='inline' src='_images/messages_6.png' style=''>
+						<br><br>
+					</div>
+				</div>
+				<div class='module'>
+					<div class='module-title'>
+						<div class='label'>Module 10<span class='colon'>:</span></div>
+						<div class='title'>Make Faby Respond to Messages</div>
+					</div>
+					<p>So far, we have run instructions for Faby by clicking on instruction groups in the scripts area. Now, we want Faby to respond to Game Logic messages like <em>“Reset Stage”</em> and <em>“Begin Game”</em></p>
+					<ol>
+						<li>
+							<strong>Create</strong> the variables <code class='b'>(pre-game velocity)</code> and <code class='b'>(wing timer)</code> as local variables, by choosing <strong><em>“For this sprite only”</em></strong> in the New Variable dialog box. Make sure you are doing this inside of the Faby sprite.
+							<br><br>
+							<em>As the stage clutters up with variable value displays, remember that you can turn off these value displays by unchecking the checkbox next to the variables in their listing on the Data section of the block palette.</em>
+						</li>
+						<li style='width:700px;'>
+							<strong>Add</strong> the following instructions to the scripts area for Faby:
+							<div class='large-code-disp'>
+								<pre class='blocks' style='float:left;'>
+									when I receive [Initialize Variables v]
+									set [color v] to [Yellow]
+									set [wing direction v] to [Up]
+									set [y velocity v] to [0]
+									set [wing timer v] to [0]
+									set x to (-50)
+
+
+									when I receive [Reset Stage v]
+									set [pre-game velocity v] to [1]
+									set y to (0)
+									forever
+											Check Faby Position
+											Check Faby Wing Flap
+											Check Faby Touching Pipe or Ground
+									end
+
+
+									when [space v] key pressed
+									set [y velocity v] to [12]
+
+
+									define Check Faby Position
+									if <(Game Mode) = [Pre-Game]> then
+											change y by (pre-game velocity)
+											if <<(y position) < [-10]> or <(y position) > [10]>> then
+													set [pre-game velocity v] to ((-1) * (pre-game velocity))
+											end
+									else
+											change y by (y velocity)
+											change [y velocity v] by (-1.2)
+											if <(y position) < [-179]> then
+													set [y velocity v] to [0]
+													set y to (-180)
+											end
+									end
+
+
+
+									define Check Faby Wing Flap
+									change [wing timer v] by (1)
+									if <(wing timer) > [7]> then
+											Change Wing Direction Variable
+											Update Faby Costume
+											set [wing timer v] to [0]
+									end
+
+
+								</pre>
+
+								<pre class='blocks' style='float:left;'>
+
+
+
+
+									define Change Wing Direction Variable
+									if <(wing direction) = [Up]> then
+											set [wing direction v] to [Down]
+									else
+											set [wing direction v] to [Up]
+									end
+
+
+
+
+									define Update Faby Costume
+									switch costume to (join (color) (wing direction))
+
+
+
+									define Check Faby Touching Pipe or Ground
+									if <&lt;touching [Pipe v]?&gt or <(y position) = [-180]>> then
+											Change Color Variable
+											Update Faby Costume
+											broadcast [Faby Died v]
+									end
+
+									define Change Color Variable
+									if <(color) = [Yellow]> then
+											set [color v] to [Red]
+									else
+											if <(color) = [Red]> then
+													set [color v] to [Blue]
+											else
+													set [color v] to [Yellow]
+											end
+									end
+
+								</pre>
+								<div class='clearfix'></div>
+							</div>
+			
+						</li>
+					</ol>
+				</div>
+
+				<div class='module'>
+					<div class='module-title'>
+						<div class='label'>Module 11<span class='colon'>:</span></div>
+						<div class='title'>Adding Pipes</div>
+					</div>
+					<ol>
+						<li>
+							<strong>Create</strong> a new sprite with the <em>Paint new sprite <img class='inline' src='_images/paint-brush-icon.png'> button.</em>
+						</li>
+						<li><strong>Rename</strong> the sprite to “Pipe”</li>
+						<li>
+							<strong>Upload</strong> two new costumes for the pipe sprite using the two images found in this <a target='' href='_files/pipe_costumes.zip'>zip file</a>.&nbsp;&nbsp;&nbsp;
+							<em>Remember to extract/expand the zip archive on your computer before uploading them as a sprite costume.</em>  
+						</li>
+						<li>
+							<strong>Create</strong> the following local variables for the Pipe sprite making sure to choose <strong><em>“For this sprite only”</em></strong> in the New Variable dialog box for each variable:
+			
+							<div class='code-lineup' style='width:700px;'>
+								<code class='b'>(center bounds)</code>
+								<code class='b'>(pending add score)</code>
+								<code class='b'>(pipe gap)</code>
+								<code class='b'>(pipe timer)</code>
+								<code class='b'>(position)</code>
+								<code class='b'>(y center)</code>
+				
+							</div>
+						</li>
+						<li>
+							<strong>Add</strong> the following instruction sets to the Pipe sprite scripts area:
+							<div class='large-code-disp' style='width:1000px;'>
+								<pre class='blocks'>
+									when I receive [Initialize Variables v]
+									set [position v] to [Above]
+									set [pipe gap v] to [100]
+									set [pipe timer v] to [0]
+									set [y center v] to [80]
+									set x to (300)
+
+
+									when I receive [Reset Stage v]
+									delete this clone
+
+
+
+									when I start as a clone
+									switch costume to (join [Pipe] (position))
+									show
+									forever
+											change x by (-3.5)
+											if <<(x position) < [-50]> and <(pending add score) = [True]>> then
+													broadcast [Score Add One v]
+													set [pending add score v] to [False]
+											end
+											if <(x position) < [-250]> then
+													delete this clone
+											end
+									end
+
+								</pre>
+								<pre class='blocks'>
+									when I receive [Begin Game v]
+									hide
+									set [pipe timer v] to [20]
+									forever
+											if <(Game Mode) = [In-Game]> then
+													change [pipe timer v] by (1)
+													if <(pipe timer) > [50]> then
+															set [y center v] to (pick random ((-1) * (center bounds)) to (center bounds))
+															set [position v] to [Above]
+															set y to ((y center) + ((pipe gap) / (2)))
+															set [pending add score v] to [True]
+															create clone of [myself v]
+															set [position v] to [Below]
+															set y to ((y center) - ((pipe gap) / (2)))
+															set [pending add score v] to [False]
+															create clone of [myself v]
+															set [pipe timer v] to [0]
+													end
+											end
+									end
+								</pre>
+								<div class='clearfix'></div>
+							</div>
+						</li>
+		
+					</ol>
+	
+				</div>
+				
+				<div class='module'>
+					<div class='module-title'>
+						<div class='label'>Module 12<span class='colon'>:</span></div>
+						<div class='title'>Keeping Track of Score</div>
+					</div>
+					<p>We will keep track of two values <code class='b'>(Score)</code> and <code class='b'>(High Score)</code>, and we'll use another sprite to handle the logic of keeping track of score, we'll call this sprite “Score”. </p>
+					<ol>
+						<li>
+							<strong>Make</strong> a new blank sprite and rename it to “Score”.
+						</li>
+						<li>
+							<strong>Create</strong> the two Global Variables <code class='b'>(Score)</code> and <code class='b'>(High Score)</code>, making sure to choose <strong><em>“For all sprites”</em></strong> so that all sprites can see these two variables.
+						</li>
+						<li>
+							<strong>Add</strong> the following instruction sets to the scripts area for the Score sprite:
+							<div class='large-code-disp'>
+								<pre class='blocks'>
+									when I receive [Initialize Variables v]
+									set [High Score v] to [0]
+									set [Score v] to [0]
+									show variable [Score v]
+									show variable [High Score v]
+
+
+									when I receive [Reset Stage v]
+									show variable [High Score v]
+									if <(Score) > (High Score)> then
+											set [High Score v] to (Score)
+									end
+
+								</pre>
+
+								<pre class='blocks'>
+
+									when I receive [Begin Game v]
+									hide variable [High Score v]
+									set [Score v] to [0]
+
+
+									when I receive [Score Add One v]
+									change [Score v] by (1)
+								</pre>
+								<div class='clearfix'></div>
+							</div>
+							<br>
+							The show and hide variable commands allow us to programmatically control whether the variable values are displayed on the screen or not.  In this case, we want the high score to be hidden during normal game play as to not clutter the stage too much.
+							<br><br>
+							When you are finished coding the game, consider hiding all variable value displays from the stage so that only the <strong>score</strong> and <strong>high score</strong> variable values will show up.
+						</li>
+					</ol>
+					<p>You made it to the end!! Thanks for taking the time to go through this activity, I hope you learned some new things from this experience.</p>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+      </div>
+    </div>
+    <div class='footer'>
+      <p>Note: "Flappy Bird" was a game originally developed by Dong Nguyen in 2013 for the iPhone. The ideas from his game are replicated on the Scratch platform in this seminar for educational and non-profit purposes.<p>
+    </div>
+  </body>
+</html>
